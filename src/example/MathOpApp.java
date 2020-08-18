@@ -8,7 +8,7 @@ public class MathOpApp {
 	 * This a math app that execute:
 	 * Addition-Yes
 	 * Multiplication-Yes
-	 * Devision-No
+	 * Division-Yes
 	 * module-No
 	 * output if number is even or odd-No
 	 */
@@ -22,8 +22,13 @@ public class MathOpApp {
 		
 		System.out.println("-------Operation result-------\n");
 		System.out.println("sum: " + addition(num1,num2));
-		System.out.println("product: " + multiply(num1,num2));
+		System.out.println("product : " + multiply(num1,num2));
+		System.out.println("division: " + division(num1,num2));
 
+	}
+
+	private static double division(double num1, double num2) {
+		return num1/num2;
 	}
 
 	private static double multiply(double num1, double num2) {

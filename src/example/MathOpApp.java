@@ -8,7 +8,7 @@ public class MathOpApp {
 	 * This a math app that execute:
 	 * Addition-Yes
 	 * Multiplication-Yes
-	 * Division-Yes
+	 * Division-Yes [handle zero division]
 	 * module-No
 	 * output if number is even or odd-No
 	 */
@@ -20,10 +20,18 @@ public class MathOpApp {
 		System.out.println("Enter second num: ");
 		double num2=scan.nextDouble();
 		
-		System.out.println("-------Operation result-------\n");
-		System.out.println("sum: " + addition(num1,num2));
-		System.out.println("product : " + multiply(num1,num2));
-		System.out.println("division: " + division(num1,num2));
+		if (num2 == 0) {
+
+			System.out.println("-------Operation result-------\n");
+			System.out.println("sum: " + addition(num1, num2));
+			System.out.println("product : " + multiply(num1, num2));
+			System.out.println("division: !!ERROR!!" );
+		} else {
+			System.out.println("-------Operation result-------\n");
+			System.out.println("sum: " + addition(num1, num2));
+			System.out.println("product : " + multiply(num1, num2));
+			System.out.println("division: " + division(num1, num2));
+		}
 
 	}
 

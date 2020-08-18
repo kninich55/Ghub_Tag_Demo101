@@ -10,6 +10,8 @@ public class MathOpApp {
 	 * Multiplication-Yes
 	 * Division-Yes
 	 * module-Yes
+	 * Division-Yes [handle zero division]
+	 * module-Yes
 	 * output if number is even or odd-No
 	 */
 
@@ -19,12 +21,21 @@ public class MathOpApp {
 		double num1=scan.nextDouble();
 		System.out.println("Enter second num: ");
 		double num2=scan.nextDouble();
-		
-		System.out.println("-------Operation result-------\n");
-		System.out.println("sum: " + addition(num1,num2));
-		System.out.println("product : " + multiply(num1,num2));
-		System.out.println("division: " + division(num1,num2));
-		System.out.println("module  : " + mod(num1,num2));
+
+		if (num2 == 0) {
+
+			System.out.println("-------Operation result-------\n");
+			System.out.println("sum: " + addition(num1, num2));
+			System.out.println("product : " + multiply(num1, num2));
+			System.out.println("division: !!ERROR!!" );
+			System.out.println("module  : " + mod(num1,num2));
+		} else {
+			System.out.println("-------Operation result-------\n");
+			System.out.println("sum: " + addition(num1, num2));
+			System.out.println("product : " + multiply(num1, num2));
+			System.out.println("division: " + division(num1, num2));
+			System.out.println("module  : " + mod(num1,num2));
+		}
 
 	}
 

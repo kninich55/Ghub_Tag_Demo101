@@ -14,14 +14,7 @@ public class MathOpApp {
 	 * module-Yes
 	 * output if number is even or odd-Yes
 	 */
-	
-	/*
-	 * This branch will be used by developer kninich55
-	 * Will create a class Operation
-	 * This class will contains all the methods
-	 * Will have attributes num1, num2 , setters and getters
-	 * 
-	 */
+
 
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
@@ -29,26 +22,25 @@ public class MathOpApp {
 		double num1=scan.nextDouble();
 		System.out.println("Enter second num: ");
 		double num2=scan.nextDouble();
-
-		if (num2 == 0) {
-
-			System.out.println("-------Operation result-------\n");
-			System.out.println("sum: " + addition(num1, num2));
-			System.out.println("product : " + multiply(num1, num2));
-			System.out.println("division: !!ERROR!!" );
-			System.out.println("module  : " + mod(num1,num2));
-			System.out.println("Number " + num1 + " is : " + oddEven(num1));
-			System.out.println("Number " + num2 + " is : " + oddEven(num2));
-		} else {
-			System.out.println("-------Operation result-------\n");
-			System.out.println("sum: " + addition(num1, num2));
-			System.out.println("product : " + multiply(num1, num2));
-			System.out.println("division: " + division(num1, num2));
-			System.out.println("module  : " + mod(num1,num2));
-			System.out.println("Number " + num1 + " is : " + oddEven(num1));
-			System.out.println("Number " + num2 + " is : " + oddEven(num2));
+		
+		
+        Calculator cal=new Calculator(num1,num2);
+		
+		System.out.println("-------Operation result-------\n");
+		
+		System.out.println("sum: " + cal.add(num1, num2));		
+		System.out.println("module  : " + cal.module(num1, num2));
+		System.out.println("product : " + multiply(num1, num2));
+		System.out.println("Number " + num1 + " is : " + oddEven(num1));
+		
+		
+		if (num2 != 0) {
+		System.out.println("division: " + division(num1, num2));
+		System.out.println("Number " + num2 + " is : " + oddEven(num2));
 		}
-
+		else
+		System.out.println("division: ERROR!");
+		
 	}
 
 	private static String oddEven(double num1) {
